@@ -12,4 +12,8 @@ module.exports = app => {
 	//curl -b "csrfToken=1fqOohg_XaHHRXaYBmEtIPPL" -H "Accept: application/json" http://localhost:7001/db/new?_csrf=1fqOohg_XaHHRXaYBmEtIPPL -d "name=wyq&pwd=112233"
 	//curl http://localhost:7001/db/new?_csrf=1fqOohg_XaHHRXaYBmEtIPPL -d "name=wyq&pwd=112233" (当关闭csrf或egg-security插件时可以使用简略发生方式)
 	app.post("/db/new", app.controller.dbUser.createUser);
+	app.get("/db/list", app.controller.dbUser.listUser);    //http://127.0.0.1:7001/db/list   curl http://127.0.0.1:7001/db/list?name=bynf
+	app.get("/db/one/:id", app.controller.dbUser.one);      //http://127.0.0.1:7001/db/one/59c377394a9a6fe05aabc6f0
+	app.put("/db/one/save/:id", app.controller.dbUser.save);  //curl -X PUT http://127.0.0.1:7001/db/one/save/59c377394a9a6fe05aabc6f0?newname=abcdefg
+	app.delete("/db/del/:id", app.controller.dbUser.delUser); //curl -X DELETE http://127.0.0.1:7001/db/del/59c377394a9a6fe05aabc6f0
 };
