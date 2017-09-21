@@ -6,6 +6,10 @@ module.exports = app => {
 		* index() {
 			this.ctx.body = "hello egg.js";
 		}
+
+		* hgj() {
+			return this.ctx.body = "hello my first egg url";
+		}
 	}
 	return HomeController;
 };
