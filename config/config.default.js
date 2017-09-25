@@ -26,3 +26,12 @@ exports.security = {    //关闭csrf安全防范(关闭后post delete put请求�
 		enable: false
 	}
 };
+
+exports.redis = {
+	client: {   //下面所有的key比选要写全,不能省略(即使为空)
+		port: 6379,
+		host: "localhost",
+		password: "",
+		db: 0
+	}
+};

@@ -12,9 +12,14 @@ exports.mongoose = {
 };
 
 /*exports.security = {      //当plugin.js中引用了其它plugin插件时,关闭会引发报错,关闭方式见config.default.js
-	enable: false,
-	package: "egg-security"
-};*/
+ enable: false,
+ package: "egg-security"
+ };*/
+
+exports.redis = {
+	enable: true,
+	package: "egg-redis"
+};
 
 
 

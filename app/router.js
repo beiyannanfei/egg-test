@@ -16,4 +16,8 @@ module.exports = app => {
 	app.get("/db/one/:id", app.controller.dbUser.one);      //http://127.0.0.1:7001/db/one/59c377394a9a6fe05aabc6f0
 	app.put("/db/one/save/:id", app.controller.dbUser.save);  //curl -X PUT http://127.0.0.1:7001/db/one/save/59c377394a9a6fe05aabc6f0?newname=abcdefg
 	app.delete("/db/del/:id", app.controller.dbUser.delUser); //curl -X DELETE http://127.0.0.1:7001/db/del/59c377394a9a6fe05aabc6f0
+
+	app.get("/cache/get", app.controller.redisAbout.index);  //curl http://127.0.0.1:7001/cache/get
+
+	console.log("=============== app.controller: %j", app.controller);
 };
