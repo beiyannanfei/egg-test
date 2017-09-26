@@ -18,4 +18,8 @@ module.exports = app => {
 	app.delete("/db/del/:id", app.controller.dbUser.delUser); //curl -X DELETE http://127.0.0.1:7001/db/del/59c377394a9a6fe05aabc6f0
 
 	app.get("/cache/get", app.controller.redisAbout.index);  //curl http://127.0.0.1:7001/cache/get
+
+	app.get("/conf/get", app.controller.configAbout.getConf); //curl http://127.0.0.1:7001/conf/get
+
+	app.get("/log/test", app.controller.logAbout.log); //curl http://127.0.0.1:7001/log/test
 };
