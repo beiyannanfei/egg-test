@@ -22,4 +22,6 @@ module.exports = app => {
 	app.get("/conf/get", app.controller.configAbout.getConf); //curl http://127.0.0.1:7001/conf/get
 
 	app.get("/log/test", app.controller.logAbout.log); //curl http://127.0.0.1:7001/log/test
+
+	console.log("=========env: %j", app.config.env);
 };
