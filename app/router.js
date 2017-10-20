@@ -23,5 +23,5 @@ module.exports = app => {
 
 	app.get("/log/test", app.controller.logAbout.log); //curl http://127.0.0.1:7001/log/test
 
-	console.log("=========env: %j", app.config.env);
+	app.get("/env/get", app.controller.configAbout.getEnv);   //curl http://127.0.0.1:7001/env/get    启动服务器 EGG_SERVER_ENV=prod npm run dev
 };

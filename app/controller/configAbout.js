@@ -11,5 +11,12 @@ module.exports = app => {
 			this.ctx.status = 200;
 			this.ctx.body = {configInfo, configDetail};
 		}
+
+		* getEnv() {      //获取环境变量
+			let env = app.config.env;
+			this.logger.info("env is %s", env);
+			this.ctx.status = 200;
+			this.ctx.body = {env};
+		}
 	}
 };
